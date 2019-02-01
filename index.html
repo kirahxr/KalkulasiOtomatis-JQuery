@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alat Hitung Masa Depan!!</title>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <form>
+            <input type="number" id="jumlahbrg" onfocus="startHitung()"> *
+            <input type="number" id="hargabrg" onblur="rampungHitung()">
+            <input type="number" id="totalbrg" onfocus="startHitung()" onblur="rampungHitung()">
+        </form>
+    </body>
+    <script>
+        //hitung total
+    function startHitung(){
+        interval = setInterval("hitung()",1);
+    }
+    function hitung(){
+        var jumlah = parseInt(document.getElementById("jumlahbrg").value);
+        var harga = parseInt(document.getElementById("hargabrg").value);
+        totalbrg = jumlah * harga;
+        document.getElementById("totalbrg").value = totalbrg;
+    }
+    function rampungHitung(){
+        clearInterval(interval);
+    }
+    </script>
+</html>
